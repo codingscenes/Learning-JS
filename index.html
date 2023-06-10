@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-</head>
-<body>
+    <title>Native JavaScript Dialog</title>
+    <style>
+      #modalDialog {
+        width: 400px;
+        padding: 20px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="modalButton">Open Modal</button>
+    <dialog id="modalDialog">
+      <div>This is my sample text</div>
+      <hr />
+      <button id="closeModal">Close</button>
+    </dialog>
 
-</body>
+    <script>
+      const modalDialog = document.getElementById('modalDialog');
+      const modalButton = document.getElementById('modalButton');
+      const closeModal = document.getElementById('closeModal');
+
+      modalButton.addEventListener('click', () => {
+        // modalDialog.style.display = 'block';
+        modalDialog.showModal();
+      });
+
+      closeModal.addEventListener('click', () => {
+        // modalDialog.style.display = 'none';
+        modalDialog.close();
+      });
+    </script>
+  </body>
 </html>
